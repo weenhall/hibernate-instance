@@ -18,8 +18,19 @@
         <property name="hibernate.current_session_context_class">thread</property>
 
         <!--single one to one association-->
-        <mapping class="com.sonetone.Employee"/>
-        <mapping class="com.sonetone.IDCard"/>
+        <!--<mapping class="com.sonetone.Employee"/>-->
+        <!--<mapping class="com.sonetone.IDCard"/>-->
 
+        <!--tow-way one to one association-->
+        <!--<mapping class="com.donetone.Employee"/>-->
+        <!--<mapping class="com.donetone.IDCard"/>-->
+
+        <!--single one to many association-->
+        <!--<mapping class="com.sonetmany.Student"/>-->
+        <!--<mapping class="com.sonetmany.Clazz"/>-->
+
+        <!--tow-way one to many association-->
+        <mapping class="com.donetmany.Student"/>
+        <mapping class="com.donetmany.Clazz"/>
     </session-factory>
 </hibernate-configuration>
