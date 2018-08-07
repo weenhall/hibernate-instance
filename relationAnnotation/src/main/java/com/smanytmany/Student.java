@@ -1,11 +1,14 @@
-package com.donetmany;
+package com.smanytmany;
+
+import com.donetmany.Clazz;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Created by wen on 2018/8/3
- * 一对多双向关联
+ * 多对多单向关联
  */
 @Entity
 @Table(name = "student")
@@ -20,10 +23,9 @@ public class Student implements Serializable{
     private int sex;
     @Column
     private int age;
-
-    @ManyToOne(cascade ={CascadeType.ALL},fetch = FetchType.LAZY)
-    @JoinColumn(name = "cid",referencedColumnName = "id")
-    private Clazz clazz;
+    @ManyToMany
+    @JoinTable(name = "teacher_stu",joinColumns = {@JoinColumn(name = "sid")},inverseJoinColumns = {@JoinColumn(name = "tid")})
+    private Set<Teacher> teacher;
 
 
     public Student() {
@@ -67,11 +69,11 @@ public class Student implements Serializable{
         this.age = age;
     }
 
-    public Clazz getClazz() {
-        return clazz;
+    public Set<Teacher> getTeacher() {
+        return teacher;
     }
 
-    public void setClazz(Clazz clazz) {
-        this.clazz = clazz;
+    public void setTeacher(Set<Teacher> teacher) {
+        this.teacher = teacher;
     }
 }

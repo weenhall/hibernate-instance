@@ -30,7 +30,19 @@
         <!--<mapping class="com.sonetmany.Clazz"/>-->
 
         <!--tow-way one to many association-->
-        <mapping class="com.donetmany.Student"/>
-        <mapping class="com.donetmany.Clazz"/>
+        <!--<mapping class="com.donetmany.Student"/>-->
+        <!--<mapping class="com.donetmany.Clazz"/>-->
+
+        <!--single many to one association-->
+        <!--<mapping class="com.manytone.Student"/>-->
+        <!--<mapping class="com.manytone.Clazz"/>-->
+
+        <!--single many to many association-->
+        <!--<mapping class="com.smanytmany.Student"/>-->
+        <!--<mapping class="com.smanytmany.Teacher"/>-->
+
+        <!--tow-way many to many association-->
+        <mapping class="com.dmanytmany.Student"/>
+        <mapping class="com.dmanytmany.Teacher"/>
     </session-factory>
 </hibernate-configuration>

@@ -1,11 +1,11 @@
-package com.donetmany;
+package com.manytone;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by wen on 2018/8/3
- * 一对多双向关联
+ * 多对一单向映射
  */
 @Entity
 @Table(name = "student")
@@ -21,7 +21,7 @@ public class Student implements Serializable{
     @Column
     private int age;
 
-    @ManyToOne(cascade ={CascadeType.ALL},fetch = FetchType.LAZY)
+    @ManyToOne(cascade ={CascadeType.ALL},fetch = FetchType.EAGER)
     @JoinColumn(name = "cid",referencedColumnName = "id")
     private Clazz clazz;
 
